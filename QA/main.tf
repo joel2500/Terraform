@@ -1,5 +1,5 @@
 resource "aws_instance" "my_vm" {
-  count         = 3
+  count         = 1
   ami           = "ami-0e670eb768a5fc3d4"
   instance_type = "t2.micro"
   key_name      = "kube"
