@@ -31,13 +31,13 @@ pipeline {
               }
             }
         }       
-        // stage('Terraform apply') {
-        //     steps {
-        //         dir('QA') {
-        //         bat 'terraform apply'
-        //       }
-        //     }
-        // }                                
+        stage('Terraform apply') {
+            steps {
+                dir('QA') {
+                bat 'terraform apply'
+              }
+            }
+        }                                
     }
 }
 post {
