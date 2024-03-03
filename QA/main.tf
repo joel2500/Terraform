@@ -8,6 +8,10 @@ resource "aws_instance" "my_vm" {
     Name = "My-EC2-instance-${count.index + 1}",
   }
 }
+provider "aws" {
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
+}
 output "instance_ip" {
   value = [for instance in aws_instance.my_vm : instance.public_ip]
 }
