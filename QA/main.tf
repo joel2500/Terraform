@@ -11,10 +11,6 @@ resource "aws_instance" "my_vm" {
 output "instance_ip" {
   value = [for instance in aws_instance.my_vm : instance.public_ip]
 }
-provider "aws" {
-  access_key = var.aws_access_key
-  secret_key = var.aws_secret_key
-}
 resource "aws_security_group" "allow_ssh" {
   name        = "allow-ssh"
   description = "Allow SSH traffic from all IP addresses"
