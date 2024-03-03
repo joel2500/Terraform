@@ -3,6 +3,8 @@ resource "aws_instance" "my_vm" {
   ami           = "ami-0e670eb768a5fc3d4"
   instance_type = "t2.micro"
   key_name      = "kube"
+  vpc_security_group_ids = ["sg-07245766946952ecb"] 
+  subnet_id              = "subnet-06ef50489fa26c384"
 
   tags = {
     Name      = "My-EC2-instance-${count.index + 1}",
