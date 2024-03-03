@@ -34,7 +34,7 @@ pipeline {
         stage('Terraform apply') {
             steps {
                 dir('QA') {
-                bat 'terraform apply'
+                bat 'terraform apply -auto-approve'
               }
             }
         }                                
